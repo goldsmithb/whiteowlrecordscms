@@ -54,6 +54,33 @@ export default defineType({
       title: 'Body',
       type: 'blockContent',
     }),
+    defineField({
+        name: 'hasAudioPlayer',
+        title: 'Include an optional audio player',
+        type: 'string',
+        options: {
+            list: [
+              {title: 'SoundCloud', value: 'SoundCloud'},
+              {title: 'Bandcamp', value: 'Bandcamp'}
+            ],
+        },
+    }),
+    defineField({
+        name: 'soundCloudURL', 
+        type: 'string', 
+        title: 'Sound Cloud URL:',
+        description: 'Simply paste the URL of the track or album below.',
+        hidden: ({document}) => {
+            console.log(document)
+            return document?.hasAudioPlayer !== "SoundCloud"}
+    }),
+    defineField({
+        name: 'bandCampIFrame', 
+        type: 'string', 
+        title: 'Bandcamp embedded player:',
+        description: 'Navigate to the track or album you would like a player for, click on "Share / Embed", and select the style of player you like. Paste the "Embed code" below (it will be an HTML iframe element).',
+        hidden: ({document}) => document?.hasAudioPlayer !== "Bandcamp",
+    }),
   ],
 
   preview: {
