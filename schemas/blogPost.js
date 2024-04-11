@@ -80,14 +80,14 @@ export default defineType({
         hidden: ({document}) => document?.hasAudioPlayer !== "SoundCloud",
     }),
     defineField({
-        name: 'bandCampIFrameBrowser', 
+        name: 'bandCampIFrameMobile', 
         type: 'string', 
         title: 'MOBILE Bandcamp embedded player:',
         description: 'Navigate to the track or album, click on "Share / Embed", and then "Embed this album." Select the style of player you would like to display on the MOBILE website. Copy and Paste the "Embed code" below (it will be an HTML iframe element: <iframe...> </iframe>).',
         hidden: ({document}) => document?.hasAudioPlayer !== "Bandcamp",
     }),
     defineField({
-      name: 'bandCampIFrameMobile', 
+      name: 'bandCampIFrameBrowser', 
       type: 'string', 
       title: 'BROWSER Bandcamp embedded player:',
         description: 'Navigate to the track or album and click on "Share / Embed". Select the style of player you would like to display on the BROWSER website. Copy and Paste the "Embed code" below (it will be an HTML iframe element: <iframe...> </iframe>).',
