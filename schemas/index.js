@@ -6,7 +6,8 @@ import thoughtPost from './thoughtPost'
 import audioPlayer from './audioPlayer'
 import blogPost from './blogPost'
 import aboutPage from './aboutPage'
+import eventPost from './eventPost'
 
 export const schemaTypes = [
-    author, category, blockContent, soundPost, thoughtPost, audioPlayer, blogPost, aboutPage
+    author, category, blockContent, soundPost, thoughtPost, audioPlayer, blogPost, aboutPage, eventPost
 ]   
