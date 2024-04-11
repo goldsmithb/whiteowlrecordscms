@@ -3,6 +3,8 @@ import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
 
+const devOnlyPlugins = [visionTool()]
+
 export default defineConfig({
   name: 'default',
   title: 'whiteowlrecordsCMS',
@@ -10,9 +12,13 @@ export default defineConfig({
   projectId: '4xbrcs0m',
   dataset: 'production',
 
-  plugins: [deskTool(), visionTool()],
+  plugins: [
+    deskTool(), 
+    (process.env.NODE_ENV === "development" ? devOnlyPlugins : [])
+  ],
 
   schema: {
     types: schemaTypes,
   },
 })
+console.log(process.env.NODE_ENV)
