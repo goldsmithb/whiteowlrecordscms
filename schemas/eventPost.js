@@ -12,6 +12,11 @@ export default defineType({
         type: 'string',
     }),
     defineField({
+      name: 'eventDate',
+      title: 'Date',
+      type: 'datetime',
+    }),
+    defineField({
       name: 'image',
       title: 'Image',
       type: 'image',
