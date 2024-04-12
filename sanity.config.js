@@ -14,7 +14,10 @@ export default defineConfig({
 
   plugins: [
     deskTool(), 
-    (process.env.NODE_ENV === "development" ? devOnlyPlugins : [])
+    (process.env.NODE_ENV === "development" ? devOnlyPlugins : []),
+    visionTool({
+      defaultDataset: "production",
+    }),
   ],
 
   schema: {
